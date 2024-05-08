@@ -1,4 +1,3 @@
-﻿# share-docs
 # ShareDocs
 
 ## Project to share the documents to other users through chats
