@@ -17,7 +17,6 @@ const ChatBox = ({ data }) => {
     fetchData();
   }, [auth, docs]);
 
-  console.log(docs);
   return (
     <div className="flex flex-col h-screen mt-">
       <div className="text-center text-amber-700 font-bold p-5 border ring-2 ring-amber-700 rounded-lg">
@@ -32,14 +31,14 @@ const ChatBox = ({ data }) => {
                   File:
                   <a
                     href={`${item.path}`}
-                    className="block text-green-500 hover:text-green-700"
+                    className="block text-blue-500 hover:text-red-700 italic"
                     target="_blank"
                     rel="noreferrer"
                   >
                     {item.name}
                   </a>
                 </p>
-                <div>From: {item.sentBy}</div>
+                <h1 className="text-gray-400 italic">click to download</h1>
               </li>
             ))}
           </ul>

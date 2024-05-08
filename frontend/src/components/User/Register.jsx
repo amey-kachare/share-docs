@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
 import { BASE_URL } from "../utills/config";
 const Register = () => {
   const [credentials, setCredentials] = useState({
@@ -10,7 +9,6 @@ const Register = () => {
     password: undefined,
   });
 
-  let { setAuth } = useAuth();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -31,8 +29,6 @@ const Register = () => {
       if (!res.ok) {
         alert(result.message);
       }
-      console.log(result.data);
-      setAuth({ type: "REGISTER_SUCCESS" });
       navigate("/login");
     } catch (err) {
       alert(err.message);

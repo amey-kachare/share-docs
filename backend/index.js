@@ -1,15 +1,13 @@
 import express from 'express'
 import cors from 'cors';
 import mongoose from 'mongoose';
-import userRoute from './routes/users.js';
 import router from './routes/routes.js';
-import authRoute from './routes/auth.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
 const app=express();
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 5000;
 const corsOptions = {
     origin: true,
     credentials: true,
@@ -30,9 +28,8 @@ const connect = async () => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
-app.use('/auth', authRoute);
-//for admin
-app.use('/users', userRoute);
+// app.use('/auth', authRoute);
+// app.use('/users', userRoute);
 app.use('/', router);
 
 app.listen(port, () => {
