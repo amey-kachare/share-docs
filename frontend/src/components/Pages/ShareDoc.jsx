@@ -46,7 +46,7 @@ const ShareDoc = (props) => {
         style={{ display: "none" }}
         onChange={(e) => setFile(e.target.files[0])}
       />
-      <div className="text-center">Sent to {auth.user.username}</div>
+      <div className="text-center">Logged in as : {auth.user.username}</div>
     </div>
   );
 };
